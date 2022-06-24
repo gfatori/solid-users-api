@@ -15,7 +15,6 @@ describe("CreateUserUseCase", () => {
       name: "Danilo Vieira",
       email: "danilo@rocketseat.com",
     });
-
     expect(usersRepository.list()).toStrictEqual([user]);
   });
 
