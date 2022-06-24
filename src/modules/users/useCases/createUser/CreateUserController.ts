@@ -12,10 +12,10 @@ class CreateUserController {
       const user = this.createUserUseCase.execute({ name, email });
       return response.status(201).json(user);
     } catch (error) {
-      // let message: string;
-      // if (error instanceof Error) message = error.message;
-      // else message = String(error);
-      return response.status(400).send({ error: "User already exists" });
+      let message;
+      if (error instanceof Error) message = error.message;
+      else message = String(error);
+      return response.status(400).send({ error: message });
     }
   }
 }

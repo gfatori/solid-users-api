@@ -10,8 +10,11 @@ class ShowUserProfileController {
     try {
       const user = this.showUserProfileUseCase.execute({ user_id });
       return response.json(user);
-    } catch (e) {
-      return response.status(404).json({ error: "User doesnt exist." });
+    } catch (error) {
+      let message;
+      if (error instanceof Error) message = error.message;
+      else message = String(error);
+      return response.status(404).json({ error: message });
     }
   }
 }
