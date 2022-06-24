@@ -12,6 +12,7 @@ class ListAllUsersUseCase {
 
   execute({ user_id }: IRequest): User[] {
     const user = this.usersRepository.findById(user_id);
+
     if (!user || user.admin === false) {
       throw new Error("No permission");
     }
