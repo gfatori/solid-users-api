@@ -16,6 +16,7 @@ class ListAllUsersUseCase {
     if (!user || user.admin === false) {
       throw new Error("No permission");
     }
+
     const users = this.usersRepository.list();
     return users;
   }

@@ -14,7 +14,7 @@ class ListAllUsersController {
       const all = this.listAllUsersUseCase.execute({ user_id });
       return response.json(all);
     } catch (err) {
-      response.status(400).send({ error: "User doesnt not exist." });
+      return response.status(400).send({ error: "User doesnt not exist." });
     }
   }
 }

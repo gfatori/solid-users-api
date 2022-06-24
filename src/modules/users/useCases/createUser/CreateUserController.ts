@@ -15,7 +15,7 @@ class CreateUserController {
       // let message: string;
       // if (error instanceof Error) message = error.message;
       // else message = String(error);
-      response.status(400).send({ error: "User already exists" });
+      return response.status(400).send({ error: "User already exists" });
     }
   }
 }
